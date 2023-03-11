@@ -6,7 +6,7 @@
 int isSquarenumber(int a)
 {
 
-    if (a < 1) // trường hợp < 1 => không phải số cp
+    if (a < 0) // trường hợp < 1 => không phải số cp
     {
         return 0;
     }
@@ -57,11 +57,14 @@ int eratosthenes(int a,int b)
     {
         if(prime[i-a] == 1)
         {
-            for(int j = 2; j< sqrt(i/2); j++)
+            for(int j = 1; j<= sqrt(i/2); j++)
             {
                 int k = i - j*j;
-                if(isSquarenumber(k)==1)
-                    dem++;
+                if(isSquarenumber(k)==1){
+                        printf("%d + %d = %d\n",k, j*j, i);
+                        dem++;
+
+                }
             }
         }
     }
@@ -78,7 +81,7 @@ int main()
     scanf("%d%d", &a, &b);
 
     int dem = eratosthenes(a, b);
-    printf("%d", dem);
+    printf("so luong thoa man: %d", dem);
 }
 
 

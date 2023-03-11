@@ -34,7 +34,7 @@ void search(char *T,char *P)
         int flag=0;
 
 
-        while( i < strlen(T))
+        while( i <= strlen(T))
         {
             if(T[i]!=P[j])
             {
